@@ -16,6 +16,6 @@ int main() {
 
     ConverteMinutos(totalMinutos, p1, p2);
 
-    printf("Horas/minutos: %02d:%02d", hr, min);
+    printf("\nHoras/minutos:\n%02d:%02d", hr, min);
     return 0;
 }
