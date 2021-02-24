@@ -6,15 +6,12 @@ int ConverteMinutos (int t, int *h, int *m){
 }
 
 int main() {
-    int totalMinutos, hr, min, *p1, *p2;
-
-    p1 = &hr;
-    p2 = &min;
+    int totalMinutos, hr, min;
 
     printf("Digite o total de minutos:\n");
     scanf("%d", &totalMinutos);
 
-    ConverteMinutos(totalMinutos, p1, p2);
+    ConverteMinutos(totalMinutos, &hr, &min);
 
     printf("\nHoras/minutos:\n%02d:%02d", hr, min);
     return 0;
