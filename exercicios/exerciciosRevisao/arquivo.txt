@@ -1,0 +1,5 @@
+Faca um programa que receba do usuario um arquivo texto. Crie outro arquivo
+texto de saida contendo o texto do arquivo de entrada original, porem substituindo todas as vogais pelo
+caractere ‘*’. Alem disso, mostre na tela quantas linhas esse arquivo possui. Dentro do programa faça
+o controle de erros, isto e, insira comandos que mostre se os arquivos foram abertos com sucesso, e caso
+contrario, imprima uma mensagem de erro encerrando o programa.
