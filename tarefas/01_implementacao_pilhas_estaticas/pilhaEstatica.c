@@ -26,7 +26,7 @@ void desempilha(Objeto *item, pilhaEstatica *pilha) {
   printf("Atencao: Nao foi possivel remover elemento, pois a pilha esta vazia.\n");
 
   else
-  item->chave = pilha->topo;
+  *item = pilha->array[pilha->topo-1];
   pilha->topo--;
 }
 
