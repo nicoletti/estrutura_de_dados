@@ -89,11 +89,8 @@ bool insereItem(PtrArvore *raiz, Objeto x) {
 
     //Processo recursivo: Se o elemento x for maior que o elemento da raiz, será acessado o filho à direita
     } else {
-        if ((*raiz)->elemento.chave < x.chave) {
-            return (insereItem(&(*raiz)->direita, x));
+        return (insereItem(&(*raiz)->direita, x));
         }
-    }
-    return (false);
 }
 
 bool procuraItem(PtrArvore *no, int chave){
@@ -206,4 +203,3 @@ PtrArvore minimoIterativo(PtrArvore *no){
 
     return (temp);
 }
-
