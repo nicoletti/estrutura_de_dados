@@ -1,0 +1,5 @@
+{10,rubinho,m,80.0,195}
+{25,Rafael Gomes Mantovani,m,50.0,175}
+{28,Tamara,f,53.4,109}
+{74,Luiz,m,28.6,165}
+{124,Ana,f,46.7,091}

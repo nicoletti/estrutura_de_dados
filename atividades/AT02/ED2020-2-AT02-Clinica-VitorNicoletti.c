@@ -33,6 +33,13 @@ void destruirLista(Lista *sistema);
 void pesquisar(Lista *sistema, int codPesquisa, FILE* arqSaida);
 
 int main(int argc, char *argv[]){
+
+    if (argc != 3) {
+	     printf("Erro!\n");
+       system("pause");
+       exit(1);
+    }
+
     Lista sistema;
     Cadastro paciente;
     FILE *arqEntrada, *arqSaida;
@@ -61,7 +68,7 @@ int main(int argc, char *argv[]){
         switch (c) {
             case '{':
                 fscanf(arqEntrada, "%d,", &paciente.cod);
-                fscanf(arqEntrada, "%[^,]s,", &paciente.nome);
+                fscanf(arqEntrada, "%[^,]s,", paciente.nome);
                 fscanf(arqEntrada, ",%c,", &paciente.sexo);
                 fscanf(arqEntrada, "%f,", &paciente.peso);
                 fscanf(arqEntrada, "%f", &paciente.altura);
@@ -100,9 +107,9 @@ int main(int argc, char *argv[]){
     return 0;
 }
 
-void iniciaLista(Lista *list){
-    list->primeiro = NULL;
-    list->tamanho = 0;
+void iniciaLista(Lista *sistema){
+    sistema->primeiro = NULL;
+    sistema->tamanho = 0;
 }
 
 bool estaVazia(Lista *list){
@@ -158,8 +165,8 @@ void imprimirListaCresc(Lista *sistema, FILE* arqSaida){
     }
 }
 
-void imprimirListaDecresc(Lista *list, FILE* arqSaida){
-    PtrNoLista percorre = list->primeiro;
+void imprimirListaDecresc(Lista *sistema, FILE* arqSaida){
+    PtrNoLista percorre = sistema->primeiro;
 
     //Percorrendo até o último cadastro
     while(percorre->proximo != NULL){
@@ -177,11 +184,11 @@ void imprimirListaDecresc(Lista *list, FILE* arqSaida){
     }
 }
 
-void destruirLista(Lista *list) {
+void destruirLista(Lista *sistema) {
 
-    if (!estaVazia(list)) {
+    if (!estaVazia(sistema)) {
         PtrNoLista apagar;
-        PtrNoLista aux = list->primeiro;
+        PtrNoLista aux = sistema->primeiro;
 
         while (aux != NULL) {
             apagar = aux;
@@ -191,14 +198,14 @@ void destruirLista(Lista *list) {
     } else {
         exit(1);
     }
-    list->primeiro = NULL;
-    list->tamanho = 0;
+    sistema->primeiro = NULL;
+    sistema->tamanho = 0;
 }
 
 void pesquisar(Lista *sistema, int codPesquisa, FILE* arqSaida){
 
     if(estaVazia(sistema)) {
-        fprintf(arqSaida, "Código não existe/não foi encontrado\n");
+        fprintf(arqSaida, "Arquivo de entrada fora do padrao esperado\n");
         exit(1);
     }
     PtrNoLista percorre=sistema->primeiro;
