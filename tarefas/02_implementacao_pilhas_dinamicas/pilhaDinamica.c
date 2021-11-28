@@ -12,7 +12,7 @@ bool estaVazia(PilhaDinamica *p){
 
 void empilha(Objeto obj, PilhaDinamica *p){
     PtrNoPilha Aux;
-    Aux = (PtrNoPilha) malloc(sizeof(PtrNoPilha));
+    Aux = (PtrNoPilha) malloc(sizeof(NoFila));
     Aux->obj = obj;
     Aux->proximo = p->topo;
     p->topo = Aux;
